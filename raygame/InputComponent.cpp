@@ -9,3 +9,35 @@ MathLibrary::Vector2 InputComponent::getMoveAxis()
 	// Return a new vector representing the move direction.
 	return MathLibrary::Vector2(moveDirectionX, moveDirectionY);
 }
+
+bool InputComponent::getAction1Pressed()
+{
+	return RAYLIB_H::IsKeyPressed(KEY_SPACE);
+}
+
+bool InputComponent::getAction3Pressed()
+{
+	return IsKeyPressed(KEY_E);
+}
+
+bool InputComponent::getAction4Pressed()
+{
+	return IsKeyPressed(KEY_F);
+}
+
+bool InputComponent::getAction1Down()
+{
+	return IsKeyDown(KEY_SPACE);
+}
+
+bool InputComponent::getAction3Down()
+{
+	return IsKeyDown(KEY_E);
+}
+
+bool InputComponent::getAction4Down()
+{
+	return IsKeyDown(KEY_F);
+}
+
+
