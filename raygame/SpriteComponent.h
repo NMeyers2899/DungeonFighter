@@ -7,7 +7,7 @@ class SpriteComponent : public Component
 public:
 	SpriteComponent() : Component("SpriteComponent") {};
 
-	SpriteComponent(const char* name, const char* path) : Component(name) 
+	SpriteComponent(const char* path) : Component("SpriteComponent") 
 	{ m_texture = new Texture2D(RAYLIB_H::LoadTexture(path)); };
 
 	SpriteComponent(const char* name, Texture2D* texture) : Component(name) { m_texture = texture; }

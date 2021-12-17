@@ -92,6 +92,9 @@ public:
     /// <returns> The component of the specified name. </returns>
     Component* getComponent(const char* name);
 
+    /// <returns> The amount of components the actor has. </returns>
+    int getComponentCount();
+
 protected:
     const char* m_name;
 
