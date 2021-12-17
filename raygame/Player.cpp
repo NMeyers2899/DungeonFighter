@@ -30,6 +30,9 @@ void Player::update(float deltaTime)
 
 	m_moveComponent->setVelocity(moveDirection * 500);
 
+	if (m_moveComponent->getVelocity().getMagnitude() > 0)
+		getTransform()->setForward(m_moveComponent->getVelocity());
+
 	if (m_inputComponent->getAction4Pressed()) 
 	{
 		Scene* currentScene = Engine::getCurrentScene();
