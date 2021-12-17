@@ -11,8 +11,13 @@ public:
 	MathLibrary::Vector2 getMoveAxis();
 
 private:
+	// Key for the player putting up their shield.
 	RAYLIB_H::KeyboardKey m_action1Key = RAYLIB_H::KeyboardKey::KEY_SPACE;
 	RAYLIB_H::KeyboardKey m_action2Key = RAYLIB_H::KeyboardKey::KEY_P;
+	// Key for the player swining their sword.
+	RAYLIB_H::KeyboardKey m_action3Key = RAYLIB_H::KeyboardKey::KEY_E;
+	// Key for the player firing their bow.
+	RAYLIB_H::KeyboardKey m_action3Key = RAYLIB_H::KeyboardKey::KEY_F;
 	RAYLIB_H::KeyboardKey m_submitKey = RAYLIB_H::KeyboardKey::KEY_ENTER;
 	RAYLIB_H::KeyboardKey m_cancelKey = RAYLIB_H::KeyboardKey::KEY_BACKSPACE;
 };
