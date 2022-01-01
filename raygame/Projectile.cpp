@@ -12,6 +12,8 @@ Projectile::Projectile(Actor* owner, MathLibrary::Vector2 velocity, const char* 
 	m_moveComponent = (MoveComponent*)addComponent(new MoveComponent());
 	m_moveComponent->setMaxSpeed(500);
 
+	m_startingPosition = getTransform()->getLocalPosition();
+
 	getTransform()->setScale(MathLibrary::Vector2{ 50, 50 });
 }
 
@@ -25,4 +27,9 @@ void Projectile::start()
 	m_moveComponent->setVelocity(m_velocity * 500);
 
 	Actor::start();
+}
+
+void Projectile::update(float deltaTime)
+{
+	m_currentPosition = getTransform()->getLocalPosition();
 }
