@@ -1,8 +1,8 @@
-#include <iostream>;
 #include "Projectile.h"
 #include "SpriteComponent.h"
 #include "MoveComponent.h"
 #include "Engine.h"
+#include "CircleCollider.h"
 
 Projectile::Projectile(Actor* owner, MathLibrary::Vector2 velocity, const char* name, float x, float y) : 
 	Actor(x, y, name)
@@ -28,6 +28,9 @@ void Projectile::start()
 {
 	m_moveComponent->setVelocity(m_velocity * 700);
 
+	m_collider = new CircleCollider(8, this);
+	setCollider((Collider*)m_collider);
+
 	Actor::start();
 }
 
@@ -45,4 +48,10 @@ void Projectile::update(float deltaTime)
 	}	
 		
 	Actor::update(deltaTime);
+}
+
+void Projectile::draw()
+{
+	Actor::draw();
+	getCollider()->draw();
 }
