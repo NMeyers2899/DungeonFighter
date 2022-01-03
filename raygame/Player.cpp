@@ -8,6 +8,7 @@
 #include "Engine.h"
 #include "Scene.h"
 #include "Projectile.h"
+#include "Collider.h"
 
 void Player::start()
 {
@@ -44,4 +45,10 @@ void Player::update(float deltaTime)
 	}
 
 	Actor::update(deltaTime);
+}
+
+void Player::draw() 
+{
+	Actor::draw();
+	getCollider()->draw();
 }

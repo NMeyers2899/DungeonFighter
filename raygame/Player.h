@@ -14,6 +14,7 @@ public:
 
 	void start() override;
 	void update(float deltaTime) override;
+	void draw() override;
 	
 private:
 	InputComponent* m_inputComponent;
