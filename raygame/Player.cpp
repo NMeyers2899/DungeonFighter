@@ -27,11 +27,14 @@ void Player::start()
 void Player::update(float deltaTime)
 {
 	MathLibrary::Vector2 moveDirection = m_inputComponent->getMoveAxis();
+	MathLibrary::Vector2 lookDirection = m_inputComponent->getLookAxis();
 
 	m_moveComponent->setVelocity(moveDirection * 300);
 
 	if (m_moveComponent->getVelocity().getMagnitude() > 0)
 		getTransform()->setForward(m_moveComponent->getVelocity());
+	if (lookDirection.getMagnitude() > 0)
+		getTransform()->setForward(lookDirection.getNormalized());
 
 	if (m_inputComponent->getAction4Pressed()) 
 	{

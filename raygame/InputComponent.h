@@ -10,6 +10,7 @@ public:
 
 	// Gets the movement of the player.
 	MathLibrary::Vector2 getMoveAxis();
+	MathLibrary::Vector2 getLookAxis();
 
 	// Possible actions regarding the action keys.
 	bool getAction1Pressed();
