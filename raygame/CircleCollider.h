@@ -31,5 +31,7 @@ public:
 
 private:
 	float m_collisionRadius;
+
+	void draw() override;
 };
 
