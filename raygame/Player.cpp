@@ -52,3 +52,11 @@ void Player::draw()
 	Actor::draw();
 	getCollider()->draw();
 }
+
+void Player::onCollision(Actor* other)
+{
+	if (other->getName() == "Wall")
+	{
+		getTransform()->setLocalPosition(getTransform()->getLocalPosition() - m_moveComponent->getVelocity());
+	}
+}

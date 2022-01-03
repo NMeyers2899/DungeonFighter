@@ -182,6 +182,8 @@ void Actor::draw()
 
         m_components[i]->draw();
     }
+
+    getCollider()->draw();
 }
 
 void Actor::end()

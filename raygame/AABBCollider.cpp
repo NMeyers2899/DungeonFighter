@@ -2,6 +2,7 @@
 #include "CircleCollider.h"
 #include "Actor.h"
 #include "Transform2D.h"
+#include "raylib.h"
 
 AABBCollider::AABBCollider(Actor* owner) : Collider::Collider(owner, ColliderType::BOX)
 {
@@ -33,6 +34,15 @@ float AABBCollider::getTop()
 float AABBCollider::getBottom()
 {
 	return getOwner()->getTransform()->getWorldPosition().y + getHeight() / 2;
+}
+
+void AABBCollider::draw()
+{
+	RAYLIB_H::DrawRectangleLines(getOwner()->getTransform()->getWorldPosition().x, 
+		getOwner()->getTransform()->getWorldPosition().y, 
+		getOwner()->getTransform()->getScale().x, 
+		getOwner()->getTransform()->getScale().y, 
+		RAYLIB_H::Color(RED));
 }
 
 bool AABBCollider::checkCollisionCircle(CircleCollider* collider)
