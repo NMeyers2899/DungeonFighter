@@ -4,7 +4,7 @@
 #include "CircleCollider.h"
 #include "Engine.h"
 
-Enemy::Enemy(float x, float y, Actor* target)
+Enemy::Enemy(float x, float y, Actor* target) : Actor(x, y, "Enemy")
 {
 	m_target = target;
 

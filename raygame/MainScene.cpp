@@ -12,6 +12,10 @@ void MainScene::start()
 	CircleCollider* playerCol = new CircleCollider(20, player);
 	player->setCollider(playerCol);
 	Enemy* enemy = new Enemy(400, 600, player);
+	Enemy* enemy1 = new Enemy(700, 200, player);
+	Enemy* enemy2 = new Enemy(-20, -20, player);
 	addActor(player);
 	addActor(enemy);
+	addActor(enemy1);
+	addActor(enemy2);
 }
