@@ -37,7 +37,7 @@ void Player::update(float deltaTime)
 	if (lookDirection.getMagnitude() > 0)
 		getTransform()->setForward(lookDirection.getNormalized());
 
-	if (m_inputComponent->getAction4Pressed()) 
+	if (m_inputComponent->getActionPressed() ) 
 	{
 		Scene* currentScene = Engine::getCurrentScene();
 		currentScene->addActor(new Projectile(this, getTransform()->getForward(), "Arrow", 

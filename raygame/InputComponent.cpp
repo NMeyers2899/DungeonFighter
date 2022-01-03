@@ -19,34 +19,62 @@ MathLibrary::Vector2 InputComponent::getLookAxis()
 	return MathLibrary::Vector2(lookDirectionX, lookDirectionY);
 }
 
+<<<<<<< Updated upstream
 bool InputComponent::getAction1Pressed()
+=======
+/// <returns> Finds if the first action key has been pressed. </returns>
+bool InputComponent::getWeapon1Pressed()
+>>>>>>> Stashed changes
 {
 	return RAYLIB_H::IsKeyPressed(KEY_SPACE);
 }
 
+<<<<<<< Updated upstream
 bool InputComponent::getAction3Pressed()
+=======
+/// <returns> Finds if the third action key has been pressed. </returns>
+bool InputComponent::getWeapon2Pressed()
+>>>>>>> Stashed changes
 {
 	return IsKeyPressed(KEY_E);
 }
 
+<<<<<<< Updated upstream
 bool InputComponent::getAction4Pressed()
+=======
+/// <returns> Finds if the fourth action key has been pressed. </returns>
+bool InputComponent::getWeapon3Pressed()
+>>>>>>> Stashed changes
 {
 	return IsKeyPressed(KEY_F);
 }
 
+<<<<<<< Updated upstream
 bool InputComponent::getAction1Down()
+=======
+/// <returns> Finds if the first action key is pressed. </returns>
+bool InputComponent::getActionPressed()
+>>>>>>> Stashed changes
+{
+	return IsKeyPressed(KEY_SPACE);
+}
+<<<<<<< Updated upstream
+
+bool InputComponent::getAction3Down()
+=======
+/// <returns> Finds if the first action key is being held down. </returns>
+bool InputComponent::getActionDown()
+>>>>>>> Stashed changes
 {
 	return IsKeyDown(KEY_SPACE);
 }
 
-bool InputComponent::getAction3Down()
-{
-	return IsKeyDown(KEY_E);
-}
-
+<<<<<<< Updated upstream
 bool InputComponent::getAction4Down()
 {
 	return IsKeyDown(KEY_F);
 }
+=======
+>>>>>>> Stashed changes
 
 
