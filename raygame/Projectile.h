@@ -23,5 +23,4 @@ private:
 	SpriteComponent* m_spriteComponent;
 	MathLibrary::Vector2 m_startingPosition;
 	MathLibrary::Vector2 m_currentPosition;
-	
 };

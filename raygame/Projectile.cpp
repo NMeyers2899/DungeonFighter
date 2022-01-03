@@ -29,7 +29,9 @@ void Projectile::start()
 	Actor::start();
 }
 
-void Projectile::update(float deltaTime)
+void Projectile::update(float deltaTime) 
 {
 	m_currentPosition = getTransform()->getLocalPosition();
+		
+	Actor::update(deltaTime);
 }
