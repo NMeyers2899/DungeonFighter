@@ -16,7 +16,7 @@ void Player::start()
 
 	m_inputComponent = dynamic_cast<InputComponent*>(addComponent(new InputComponent()));
 	m_moveComponent = dynamic_cast<MoveComponent*>(addComponent(new MoveComponent()));
-	m_moveComponent->setMaxSpeed(500);
+	m_moveComponent->setMaxSpeed(100);
 	m_spriteComponent = dynamic_cast<SpriteComponent*>(addComponent(new SpriteComponent("Images/player.png")));
 
 
@@ -30,7 +30,7 @@ void Player::update(float deltaTime)
 	MathLibrary::Vector2 moveDirection = m_inputComponent->getMoveAxis();
 	MathLibrary::Vector2 lookDirection = m_inputComponent->getLookAxis();
 
-	m_moveComponent->setVelocity(moveDirection * 300);
+	m_moveComponent->setVelocity(moveDirection * 100);
 
 	if (m_moveComponent->getVelocity().getMagnitude() > 0)
 		getTransform()->setForward(m_moveComponent->getVelocity());
