@@ -157,6 +157,11 @@ Component* Actor::getComponent(const char* name)
     }
 }
 
+int Actor::getComponentCount()
+{
+	return m_componentCount;
+}
+
 void Actor::update(float deltaTime)
 {
     for (int i = 0; i < m_componentCount; i++) 
