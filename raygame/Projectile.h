@@ -5,6 +5,7 @@
 class Player;
 class SpriteComponent;
 class MoveComponent;
+class CircleCollider;
 
 class Projectile : public Actor
 {
@@ -15,6 +16,7 @@ public:
 
 	void start() override;
 	void update(float deltaTime) override;
+	void draw() override;
 
 private:
 	Actor* m_owner;
@@ -23,4 +25,5 @@ private:
 	SpriteComponent* m_spriteComponent;
 	MathLibrary::Vector2 m_startingPosition;
 	MathLibrary::Vector2 m_currentPosition;
+	CircleCollider* m_collider;
 };

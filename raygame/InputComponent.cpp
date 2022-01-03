@@ -19,31 +19,37 @@ MathLibrary::Vector2 InputComponent::getLookAxis()
 	return MathLibrary::Vector2(lookDirectionX, lookDirectionY);
 }
 
+/// <returns> Finds if the first action key has been pressed. </returns>
 bool InputComponent::getAction1Pressed()
 {
 	return RAYLIB_H::IsKeyPressed(KEY_SPACE);
 }
 
+/// <returns> Finds if the third action key has been pressed. </returns>
 bool InputComponent::getAction3Pressed()
 {
 	return IsKeyPressed(KEY_E);
 }
 
+/// <returns> Finds if the fourth action key has been pressed. </returns>
 bool InputComponent::getAction4Pressed()
 {
 	return IsKeyPressed(KEY_F);
 }
 
+/// <returns> Finds if the first action key is being held down. </returns>
 bool InputComponent::getAction1Down()
 {
 	return IsKeyDown(KEY_SPACE);
 }
 
+/// <returns> Finds if the third action key is being held down. </returns>
 bool InputComponent::getAction3Down()
 {
 	return IsKeyDown(KEY_E);
 }
 
+/// <returns> Finds if the fourth action key is being held down. </returns>
 bool InputComponent::getAction4Down()
 {
 	return IsKeyDown(KEY_F);
