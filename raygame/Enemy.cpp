@@ -28,7 +28,7 @@ void Enemy::update(float deltaTime)
 {
 	MathLibrary::Vector2 moveDirection = ((m_target->getTransform()->getWorldPosition() - getTransform()->getWorldPosition()).getNormalized());
 
-	m_moveComponent->setVelocity(moveDirection * 100);
+	m_moveComponent->setVelocity(moveDirection * 70);
 	getTransform()->setForward(m_moveComponent->getVelocity());
 
 	Actor::update(deltaTime);

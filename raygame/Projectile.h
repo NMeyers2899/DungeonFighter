@@ -18,6 +18,8 @@ public:
 	void update(float deltaTime) override;
 	void draw() override;
 
+	void onCollision(Actor* other) override;
+
 private:
 	Actor* m_owner;
 	MathLibrary::Vector2 m_velocity;
