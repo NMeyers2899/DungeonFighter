@@ -60,7 +60,7 @@ void Player::onCollision(Actor* other)
 
 	if (other->getName() == "Enemy")
 	{
-		Engine::destroy(this);
+		getTransform()->setWorldPosition({ 20, 20 });
 		return;
 	}
 }
