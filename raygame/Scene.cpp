@@ -1,5 +1,6 @@
 #include "Scene.h"
 #include "Transform2D.h"
+#include <string.h>
 
 Scene::Scene()
 {

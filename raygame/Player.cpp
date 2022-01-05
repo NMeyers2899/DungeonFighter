@@ -52,3 +52,15 @@ void Player::draw()
 	Actor::draw();
 	getCollider()->draw();
 }
+
+void Player::onCollision(Actor* other)
+{
+	if (other->getName() == "Wall")
+		getTransform()->setWorldPosition(getTransform()->getWorldPosition() - m_moveComponent->getVelocity().getNormalized());
+
+	if (other->getName() == "Enemy")
+	{
+		getTransform()->setWorldPosition({ 20, 20 });
+		return;
+	}
+}

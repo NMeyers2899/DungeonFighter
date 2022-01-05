@@ -9,7 +9,7 @@ class Enemy : public Actor
 {
 public:
 	Enemy() {};
-	Enemy(float x, float y, Actor* target);
+	Enemy(float x, float y, Actor* target, int health);
 	~Enemy() {};
 
 	void start() override;
@@ -18,10 +18,14 @@ public:
 
 	void onCollision(Actor* other) override;
 
+	int getHealth() { return m_health; }
+	void setHealth(int value) { m_health = value; }
+
 private:
 	MoveComponent* m_moveComponent;
 	SpriteComponent* m_spriteComponent;
 	CircleCollider* m_collider;
 	Actor* m_target;
+	int m_health;
 };
 

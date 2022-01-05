@@ -54,8 +54,6 @@ public:
     /// <returns>False if the actor is a nullptr or isn't in the array.</returns>
     bool removeActor(Actor* actor);
 
-
-
     virtual void start();
 
     virtual void update(float deltaTime);
