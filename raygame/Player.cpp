@@ -49,15 +49,16 @@ void Player::update(float deltaTime)
 		Scene* currentScene = Engine::getCurrentScene();
 		if (m_weapon == 1) 
 		{
-			currentScene->addActor(new Projectile(this, getTransform()->getForward(), "Attack",
+			currentScene->addActor(new Projectile(this, getTransform()->getForward(), "Arrow",
 				getTransform()->getWorldPosition().x, getTransform()->getWorldPosition().y));
 		}
 		if (m_weapon == 2)
 		{
-			Sword* sword = new Sword(this, getTransform()->getForward(), "Attack",
+			Sword* sword = new Sword(this, getTransform()->getForward(), "Arrow",
 				getTransform()->getWorldPosition().x, getTransform()->getWorldPosition().y);
-			Transform->addChild(sword->getTransform());
+			//getTransform()->addChild(sword->getTransform());
 			currentScene->addActor(sword);
+			//sword->getTransform()->setLocalPosition(MathLibrary::Vector2(0, 2));
 		}
 	}
 
@@ -73,11 +74,11 @@ void Player::draw()
 void Player::onCollision(Actor* other)
 {
 	if (other->getName() == "Wall")
-		getTransform()->setWorldPosition(getTransform()->getWorldPosition() - m_moveComponent->getVelocity().getNormalized());
+		getTransform()->setWorldPostion(getTransform()->getWorldPosition() - m_moveComponent->getVelocity().getNormalized());
 
 	if (other->getName() == "Enemy")
 	{
-		getTransform()->setWorldPosition({ 20, 20 });
+		getTransform()->setWorldPostion({ 20, 20 });
 		return;
 	}
 }

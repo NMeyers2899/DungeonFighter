@@ -38,6 +38,7 @@ void Sword::start()
 void Sword::update(float deltaTime)
 {
 	m_currentPosition = getTransform()->getLocalPosition();
+	getTransform()->setWorldPostion(m_owner->getTransform()->getWorldPosition());
 
 	MathLibrary::Vector2 displacement = m_currentPosition - m_startingPosition;
 	float distance = displacement.getMagnitude();

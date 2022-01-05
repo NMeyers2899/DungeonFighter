@@ -24,5 +24,4 @@ private:
 	InputComponent* m_inputComponent;
 	MoveComponent* m_moveComponent;
 	SpriteComponent* m_spriteComponent;
-	Transform2D* Transform;
 };

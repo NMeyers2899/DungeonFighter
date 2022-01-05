@@ -42,7 +42,7 @@ void Enemy::draw()
 
 void Enemy::onCollision(Actor* other)
 {
-	if (other->getName() == "Attack")
+	if (other->getName() == "Arrow")
 	{
 		Engine::destroy(other);
 	
