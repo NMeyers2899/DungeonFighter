@@ -63,4 +63,11 @@ void Player::onCollision(Actor* other)
 		getTransform()->setWorldPosition({ 20, 20 });
 		return;
 	}
+
+	if (other->getName() == "EnemyShot")
+	{
+		Engine::destroy(other);
+		getTransform()->setWorldPosition({ 20, 20 });
+		return;
+	}
 }
