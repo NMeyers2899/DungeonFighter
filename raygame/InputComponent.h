@@ -13,22 +13,22 @@ public:
 	MathLibrary::Vector2 getLookAxis();
 
 	// Possible actions regarding the action keys.
-	bool getAction1Pressed();
-	bool getAction3Pressed();
-	bool getAction4Pressed();
+	bool getActionPressed();
+	bool getWeapon1Pressed();
+	bool getWeapon2Pressed();
+	bool getWeapon3Pressed();
 
-	bool getAction1Down();
-	bool getAction3Down();
-	bool getAction4Down();
+	bool getActionDown();
+
 
 private:
-	// Key for the player putting up their shield.
-	RAYLIB_H::KeyboardKey m_action1Key = RAYLIB_H::KeyboardKey::KEY_SPACE;
-	RAYLIB_H::KeyboardKey m_action2Key = RAYLIB_H::KeyboardKey::KEY_P;
-	// Key for the player swining their sword.
-	RAYLIB_H::KeyboardKey m_action3Key = RAYLIB_H::KeyboardKey::KEY_E;
-	// Key for the player firing their bow.
-	RAYLIB_H::KeyboardKey m_action4Key = RAYLIB_H::KeyboardKey::KEY_F;
+	// Key for the player to perform their current weapons action.
+	RAYLIB_H::KeyboardKey m_actionKey = RAYLIB_H::KeyboardKey::KEY_F;
+	// Keys for the player to switch between the three weapons
+	RAYLIB_H::KeyboardKey m_weapon1Key = RAYLIB_H::KeyboardKey::KEY_ONE;
+	RAYLIB_H::KeyboardKey m_weapon2Key = RAYLIB_H::KeyboardKey::KEY_TWO;
+	RAYLIB_H::KeyboardKey m_weapon3Key = RAYLIB_H::KeyboardKey::KEY_THREE;
+
 	RAYLIB_H::KeyboardKey m_submitKey = RAYLIB_H::KeyboardKey::KEY_ENTER;
 	RAYLIB_H::KeyboardKey m_cancelKey = RAYLIB_H::KeyboardKey::KEY_BACKSPACE;
 };
