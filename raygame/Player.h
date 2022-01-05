@@ -17,6 +17,8 @@ public:
 	void draw() override;
 
 	void onCollision(Actor* other) override;
+
+	int m_weapon = 1;
 	
 private:
 	InputComponent* m_inputComponent;

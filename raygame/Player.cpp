@@ -36,12 +36,21 @@ void Player::update(float deltaTime)
 		getTransform()->setForward(m_moveComponent->getVelocity());
 	if (lookDirection.getMagnitude() > 0)
 		getTransform()->setForward(lookDirection.getNormalized());
+	if (m_inputComponent->getWeapon1Pressed())
+		m_weapon = 1;
+	if (m_inputComponent->getWeapon2Pressed())
+		m_weapon = 2;
+	if (m_inputComponent->getWeapon3Pressed())
+		m_weapon = 3;
 
-	if (m_inputComponent->getAction4Pressed()) 
+	if (m_inputComponent->getActionPressed()) 
 	{
 		Scene* currentScene = Engine::getCurrentScene();
-		currentScene->addActor(new Projectile(this, getTransform()->getForward(), "Arrow", 
-			getTransform()->getWorldPosition().x, getTransform()->getWorldPosition().y));
+		if (m_weapon == 1) 
+		{
+			currentScene->addActor(new Projectile(this, getTransform()->getForward(), "Arrow",
+				getTransform()->getWorldPosition().x, getTransform()->getWorldPosition().y));
+		}
 	}
 
 	Actor::update(deltaTime);
