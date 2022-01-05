@@ -54,8 +54,10 @@ void Player::update(float deltaTime)
 		}
 		if (m_weapon == 2)
 		{
-			currentScene->addActor(new Sword(this, getTransform()->getForward(), "Attack",
-				getTransform()->getWorldPosition().x, getTransform()->getWorldPosition().y));
+			Sword* sword = new Sword(this, getTransform()->getForward(), "Attack",
+				getTransform()->getWorldPosition().x, getTransform()->getWorldPosition().y);
+			Transform->addChild(sword->getTransform());
+			currentScene->addActor(sword);
 		}
 	}
 

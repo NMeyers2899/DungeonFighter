@@ -3,6 +3,7 @@
 #include "MoveComponent.h"
 #include "Engine.h"
 #include "AABBCollider.h"
+#include "Transform2D.h"
 
 Sword::Sword(Actor* owner, MathLibrary::Vector2 velocity, const char* name, float x, float y) :
 	Actor(x, y, name)

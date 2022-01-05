@@ -26,4 +26,5 @@ private:
 	MathLibrary::Vector2 m_startingPosition;
 	MathLibrary::Vector2 m_currentPosition;
 	AABBCollider* m_collider;
+	Transform2D* Transform;
 };
