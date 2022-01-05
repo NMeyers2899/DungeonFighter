@@ -21,6 +21,9 @@ public:
 	int getHealth() { return m_health; }
 	void setHealth(int value) { m_health = value; }
 
+	MoveComponent* getMoveComponent() { return m_moveComponent; }
+	SpriteComponent* getSpriteComponent() { return m_spriteComponent; }
+
 private:
 	MoveComponent* m_moveComponent;
 	SpriteComponent* m_spriteComponent;

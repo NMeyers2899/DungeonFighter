@@ -28,7 +28,7 @@ void Enemy::update(float deltaTime)
 {
 	MathLibrary::Vector2 moveDirection = ((m_target->getTransform()->getWorldPosition() - getTransform()->getWorldPosition()).getNormalized());
 
-	m_moveComponent->setVelocity(moveDirection * 100);
+	m_moveComponent->setVelocity(moveDirection * 70);
 	getTransform()->setForward(m_moveComponent->getVelocity());
 
 	Actor::update(deltaTime);
@@ -51,6 +51,9 @@ void Enemy::onCollision(Actor* other)
 		if (m_health <= 0)
 			Engine::destroy(this);
 	}
+
+	if (other->getName() == "Wall")
+		getTransform()->setWorldPosition(getTransform()->getWorldPosition() - m_moveComponent->getVelocity().getNormalized());
 }
 
 
