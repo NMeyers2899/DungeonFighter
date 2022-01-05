@@ -51,6 +51,11 @@ void Player::update(float deltaTime)
 			currentScene->addActor(new Projectile(this, getTransform()->getForward(), "Arrow",
 				getTransform()->getWorldPosition().x, getTransform()->getWorldPosition().y));
 		}
+		if (m_weapon == 2)
+		{
+			currentScene->addActor(new Projectile(this, getTransform()->getForward(), "Arrow",
+				getTransform()->getWorldPosition().x, getTransform()->getWorldPosition().y));
+		}
 	}
 
 	Actor::update(deltaTime);
