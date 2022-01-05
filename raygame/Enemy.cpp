@@ -51,6 +51,9 @@ void Enemy::onCollision(Actor* other)
 		if (m_health <= 0)
 			Engine::destroy(this);
 	}
+
+	if (other->getName() == "Wall")
+		getTransform()->setWorldPosition(getTransform()->getWorldPosition() - m_moveComponent->getVelocity().getNormalized());
 }
 
 

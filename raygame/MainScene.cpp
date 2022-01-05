@@ -21,6 +21,10 @@ void MainScene::start()
 	wall->getTransform()->setScale({ 50, 100 });
 	AABBCollider* wallCol = new AABBCollider(wall);
 	wall->setCollider(wallCol);
+	Actor* wall2 = new Actor(200, 400, "Wall");
+	wall2->getTransform()->setScale({ 50, 100 });
+	AABBCollider* wall2Col = new AABBCollider(wall2);
+	wall2->setCollider(wall2Col);
 
 	// All starting actors.
 	addActor(player);
@@ -28,4 +32,5 @@ void MainScene::start()
 	addActor(enemy1);
 	addActor(enemy2);
 	addActor(wall);
+	addActor(wall2);
 }
