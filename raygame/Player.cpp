@@ -8,6 +8,7 @@
 #include "Engine.h"
 #include "Scene.h"
 #include "Projectile.h"
+#include "Sword.h"
 #include "Collider.h"
 
 void Player::start()
@@ -36,12 +37,30 @@ void Player::update(float deltaTime)
 		getTransform()->setForward(m_moveComponent->getVelocity());
 	if (lookDirection.getMagnitude() > 0)
 		getTransform()->setForward(lookDirection.getNormalized());
+	if (m_inputComponent->getWeapon1Pressed())
+		weapon = 1;
+	if (m_inputComponent->getWeapon2Pressed())
+		weapon = 2;
+	if (m_inputComponent->getWeapon3Pressed())
+		weapon = 3;
 
+<<<<<<< Updated upstream
 	if (m_inputComponent->getActionPressed() ) 
+=======
+	if (m_inputComponent->getActionPressed()) 
+>>>>>>> Stashed changes
 	{
 		Scene* currentScene = Engine::getCurrentScene();
-		currentScene->addActor(new Projectile(this, getTransform()->getForward(), "Arrow", 
-			getTransform()->getWorldPosition().x, getTransform()->getWorldPosition().y));
+		if (weapon == 1) 
+		{
+			currentScene->addActor(new Projectile(this, getTransform()->getForward(), "Arrow",
+				getTransform()->getWorldPosition().x, getTransform()->getWorldPosition().y));
+		}
+		if (weapon == 2) 
+		{
+			currentScene->addActor(new Sword(this, getTransform()->getForward(), "Sword",
+				getTransform()->getWorldPosition().x, getTransform()->getWorldPosition().y));
+		}
 	}
 
 	Actor::update(deltaTime);

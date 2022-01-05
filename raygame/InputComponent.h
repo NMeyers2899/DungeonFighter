@@ -16,6 +16,7 @@ public:
 	bool getWeapon1Pressed();
 	bool getWeapon2Pressed();
 	bool getWeapon3Pressed();
+<<<<<<< Updated upstream
 
 	bool getActionPressed();
 	bool getActionDown();
@@ -27,5 +28,19 @@ private:
 	RAYLIB_H::KeyboardKey m_weapon3Key = RAYLIB_H::KeyboardKey::KEY_THREE;
 	// Weapon attack key
 	RAYLIB_H::KeyboardKey m_actionKey = RAYLIB_H::KeyboardKey::KEY_SPACE;
+=======
+	bool getActionPressed();
+
+	bool getActionDown();
+
+private:
+	// Key for the player putting up their shield.
+	RAYLIB_H::KeyboardKey m_weapon1Key = RAYLIB_H::KeyboardKey::KEY_ONE;
+	RAYLIB_H::KeyboardKey m_weapon2Key = RAYLIB_H::KeyboardKey::KEY_TWO;
+	RAYLIB_H::KeyboardKey m_weapon3Key = RAYLIB_H::KeyboardKey::KEY_THREE;
+	RAYLIB_H::KeyboardKey m_actionKey = RAYLIB_H::KeyboardKey::KEY_F;
+	RAYLIB_H::KeyboardKey m_submitKey = RAYLIB_H::KeyboardKey::KEY_ENTER;
+	RAYLIB_H::KeyboardKey m_cancelKey = RAYLIB_H::KeyboardKey::KEY_BACKSPACE;
+>>>>>>> Stashed changes
 };
 

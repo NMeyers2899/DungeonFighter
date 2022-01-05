@@ -20,15 +20,21 @@ MathLibrary::Vector2 InputComponent::getLookAxis()
 }
 
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 bool InputComponent::getAction1Pressed()
 =======
 /// <returns> Finds if the first action key has been pressed. </returns>
 bool InputComponent::getWeapon1Pressed()
 >>>>>>> Stashed changes
+=======
+/// <returns> Finds if the first action key has been pressed. </returns>
+bool InputComponent::getWeapon1Pressed()
+>>>>>>> Stashed changes
 {
-	return RAYLIB_H::IsKeyPressed(KEY_SPACE);
+	return RAYLIB_H::IsKeyPressed(KEY_ONE);
 }
 
+<<<<<<< Updated upstream
 <<<<<<< Updated upstream
 bool InputComponent::getAction3Pressed()
 =======
@@ -45,10 +51,15 @@ bool InputComponent::getAction4Pressed()
 /// <returns> Finds if the fourth action key has been pressed. </returns>
 bool InputComponent::getWeapon3Pressed()
 >>>>>>> Stashed changes
+=======
+/// <returns> Finds if the first action key has been pressed. </returns>
+bool InputComponent::getWeapon2Pressed()
+>>>>>>> Stashed changes
 {
-	return IsKeyPressed(KEY_F);
+	return RAYLIB_H::IsKeyPressed(KEY_TWO);
 }
 
+<<<<<<< Updated upstream
 <<<<<<< Updated upstream
 bool InputComponent::getAction1Down()
 =======
@@ -57,9 +68,16 @@ bool InputComponent::getActionPressed()
 >>>>>>> Stashed changes
 {
 	return IsKeyPressed(KEY_SPACE);
+=======
+/// <returns> Finds if the first action key has been pressed. </returns>
+bool InputComponent::getWeapon3Pressed()
+{
+	return RAYLIB_H::IsKeyPressed(KEY_THREE);
+>>>>>>> Stashed changes
 }
 <<<<<<< Updated upstream
 
+<<<<<<< Updated upstream
 bool InputComponent::getAction3Down()
 =======
 /// <returns> Finds if the first action key is being held down. </returns>
@@ -71,10 +89,21 @@ bool InputComponent::getActionDown()
 
 <<<<<<< Updated upstream
 bool InputComponent::getAction4Down()
+=======
+/// <returns> Finds if the first action key has been pressed. </returns>
+bool InputComponent::getActionPressed()
+{
+	return RAYLIB_H::IsKeyPressed(KEY_F);
+}
+
+/// <returns> Finds if the first action key is being held down. </returns>
+bool InputComponent::getActionDown()
+>>>>>>> Stashed changes
 {
 	return IsKeyDown(KEY_F);
 }
 =======
 >>>>>>> Stashed changes
+
 
 

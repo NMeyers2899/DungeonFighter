@@ -12,6 +12,8 @@ public:
 	Player(float x, float y, const char* name) : Actor(x, y, name) {};
 	~Player() {};
 
+	int weapon = 1;
+
 	void start() override;
 	void update(float deltaTime) override;
 	void draw() override;
