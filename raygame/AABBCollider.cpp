@@ -38,11 +38,7 @@ float AABBCollider::getBottom()
 
 void AABBCollider::draw()
 {
-	RAYLIB_H::DrawRectangleLines(getOwner()->getTransform()->getWorldPosition().x, 
-		getOwner()->getTransform()->getWorldPosition().y, 
-		getOwner()->getTransform()->getScale().x, 
-		getOwner()->getTransform()->getScale().y, 
-		RAYLIB_H::Color(RED));
+	RAYLIB_H::DrawRectangleLines(getLeft(), getTop(), m_width, m_height, RAYLIB_H::Color(RED));
 }
 
 bool AABBCollider::checkCollisionCircle(CircleCollider* collider)

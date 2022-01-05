@@ -56,7 +56,11 @@ void Player::draw()
 void Player::onCollision(Actor* other)
 {
 	if (other->getName() == "Wall")
+		getTransform()->setWorldPosition(getTransform()->getWorldPosition() - m_moveComponent->getVelocity().getNormalized());
+
+	if (other->getName() == "Enemy")
 	{
-		getTransform()->setWorldPosition(getTransform()->getLocalPosition() - m_moveComponent->getVelocity());
+		Engine::destroy(this);
+		return;
 	}
 }

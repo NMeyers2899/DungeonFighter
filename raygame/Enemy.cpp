@@ -45,7 +45,7 @@ void Enemy::onCollision(Actor* other)
 	if (other->getName() == "Arrow")
 	{
 		Engine::destroy(other);
-
+	
 		m_health--;
 
 		if (m_health <= 0)

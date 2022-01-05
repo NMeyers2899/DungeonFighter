@@ -13,18 +13,18 @@ void MainScene::start()
 	CircleCollider* playerCol = new CircleCollider(20, player);
 	player->setCollider(playerCol);
 
-	Enemy* enemy = new Enemy(400, 600, player, 10);
+	Enemy* enemy = new Enemy(400, 600, player, 100);
 	Enemy* enemy1 = new Enemy(700, 200, player, 3);
 	Enemy* enemy2 = new Enemy(-20, -20, player, 3);
 
 	Actor* wall = new Actor(400, 600, "Wall");
 	wall->getTransform()->setScale({ 50, 100 });
-	AABBCollider* wallCol = new AABBCollider(50, 100, wall);
+	AABBCollider* wallCol = new AABBCollider(wall);
 	wall->setCollider(wallCol);
 
 	addActor(player);
-	addActor(enemy);
+	/*addActor(enemy);
 	addActor(enemy1);
-	addActor(enemy2);
+	addActor(enemy2);*/
 	addActor(wall);
 }
