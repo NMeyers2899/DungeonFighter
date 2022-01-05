@@ -22,6 +22,7 @@ void MainScene::start()
 	AABBCollider* wallCol = new AABBCollider(wall);
 	wall->setCollider(wallCol);
 
+	// All starting actors.
 	addActor(player);
 	addActor(enemy);
 	addActor(enemy1);
