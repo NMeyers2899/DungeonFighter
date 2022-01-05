@@ -57,6 +57,6 @@ void Player::onCollision(Actor* other)
 {
 	if (other->getName() == "Wall")
 	{
-		getTransform()->setLocalPosition(getTransform()->getLocalPosition() - m_moveComponent->getVelocity());
+		getTransform()->setWorldPosition(getTransform()->getLocalPosition() - m_moveComponent->getVelocity());
 	}
 }
