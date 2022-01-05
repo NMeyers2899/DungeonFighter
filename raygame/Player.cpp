@@ -8,6 +8,7 @@
 #include "Engine.h"
 #include "Scene.h"
 #include "Projectile.h"
+#include "Sword.h"
 #include "Collider.h"
 
 void Player::start()
@@ -48,12 +49,12 @@ void Player::update(float deltaTime)
 		Scene* currentScene = Engine::getCurrentScene();
 		if (m_weapon == 1) 
 		{
-			currentScene->addActor(new Projectile(this, getTransform()->getForward(), "Arrow",
+			currentScene->addActor(new Projectile(this, getTransform()->getForward(), "Attack",
 				getTransform()->getWorldPosition().x, getTransform()->getWorldPosition().y));
 		}
 		if (m_weapon == 2)
 		{
-			currentScene->addActor(new Projectile(this, getTransform()->getForward(), "Arrow",
+			currentScene->addActor(new Sword(this, getTransform()->getForward(), "Attack",
 				getTransform()->getWorldPosition().x, getTransform()->getWorldPosition().y));
 		}
 	}
