@@ -36,11 +36,6 @@ float AABBCollider::getBottom()
 	return getOwner()->getTransform()->getWorldPosition().y + getHeight() / 2;
 }
 
-void AABBCollider::draw()
-{
-	RAYLIB_H::DrawRectangleLines(getLeft(), getTop(), m_width, m_height, RAYLIB_H::Color(RED));
-}
-
 bool AABBCollider::checkCollisionCircle(CircleCollider* collider)
 {
 	//Return false if the actor is checking collision against itself
@@ -65,4 +60,9 @@ bool AABBCollider::checkCollisionAABB(AABBCollider* collider)
 		return true;
 
 	return false;
+}
+
+void AABBCollider::draw()
+{
+	RAYLIB_H::DrawRectangleLines(getLeft(), getTop(), m_width, m_height, RAYLIB_H::Color(RED));
 }

@@ -40,10 +40,10 @@ public:
 	virtual bool checkCollisionCircle(CircleCollider* collider) override;
 	virtual bool checkCollisionAABB(AABBCollider* collider) override;
 
-	void draw() override;
-
 private:
 	float m_width;
 	float m_height;
+
+	void draw() override;
 };
 
