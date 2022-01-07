@@ -59,6 +59,6 @@ void Shield::onCollision(Actor* other)
 	{
 		MoveComponent* mc = dynamic_cast<MoveComponent*>(other->getComponent("MoveComponent"));
 		mc->setVelocity((mc->getVelocity() * -1));
-		other->setName("Reflect");
+		other->setName("ReflectedShot");
 	}
 }
