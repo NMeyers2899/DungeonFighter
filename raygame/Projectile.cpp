@@ -4,7 +4,7 @@
 #include "Engine.h"
 #include "CircleCollider.h"
 
-Projectile::Projectile(Actor* owner, MathLibrary::Vector2 velocity, const char* name, float x, float y) : 
+Projectile::Projectile(Actor* owner, MathLibrary::Vector2 velocity, const char* name, float x, float y, int charge) : 
 	Actor(x, y, name)
 {
 	m_owner = owner;
@@ -16,7 +16,10 @@ Projectile::Projectile(Actor* owner, MathLibrary::Vector2 velocity, const char* 
 
 	m_startingPosition = getTransform()->getLocalPosition();
 
-	getTransform()->setScale(MathLibrary::Vector2{ 50, 50 });
+	m_charge = charge;
+
+	m_size = 50 + (charge/10);
+	getTransform()->setScale(MathLibrary::Vector2{ m_size, m_size });
 }
 
 Projectile::~Projectile()
@@ -28,7 +31,8 @@ void Projectile::start()
 {
 	m_moveComponent->setVelocity(m_velocity * 700);
 
-	m_collider = new CircleCollider(8, this);
+	m_size = 8 + (m_charge / 50);
+	m_collider = new CircleCollider(m_size, this);
 	setCollider((Collider*)m_collider);
 
 	Actor::start();
@@ -41,7 +45,8 @@ void Projectile::update(float deltaTime)
 	MathLibrary::Vector2 displacement = m_currentPosition - m_startingPosition;
 	float distance = displacement.getMagnitude();
 
-	if (distance >= 200)
+	float dist = 200 + (m_charge/5);
+	if (distance >= dist)
 	{
 		Engine::destroy(this);
 		return;

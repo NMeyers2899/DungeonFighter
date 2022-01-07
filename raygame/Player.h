@@ -16,6 +16,8 @@ public:
 	void update(float deltaTime) override;
 	void draw() override;
 
+	int m_charge = 0;
+
 	void onCollision(Actor* other) override;
 	
 private:

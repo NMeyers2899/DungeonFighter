@@ -19,7 +19,7 @@ void Geist::update(float deltaTime)
 	{
 		Scene* currentScene = Engine::getCurrentScene();
 		currentScene->addActor(new Projectile(this, getTransform()->getForward(), "EnemyShot",
-			getTransform()->getWorldPosition().x, getTransform()->getWorldPosition().y));
+			getTransform()->getWorldPosition().x, getTransform()->getWorldPosition().y, 0));
 
 		m_startTime = m_timeBetweenShots;
 	}

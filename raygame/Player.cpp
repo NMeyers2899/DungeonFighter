@@ -37,11 +37,18 @@ void Player::update(float deltaTime)
 	if (lookDirection.getMagnitude() > 0)
 		getTransform()->setForward(lookDirection.getNormalized());
 
-	if (m_inputComponent->getAction4Pressed()) 
+	if (m_inputComponent->getActionDown()) 
+	{
+		m_charge++;
+		if (m_charge > 1000)
+			m_charge = 1000;
+	}
+	if (m_inputComponent->getActionDown() == false && m_charge != 0)
 	{
 		Scene* currentScene = Engine::getCurrentScene();
 		currentScene->addActor(new Projectile(this, getTransform()->getForward(), "Arrow", 
-			getTransform()->getWorldPosition().x, getTransform()->getWorldPosition().y));
+			getTransform()->getWorldPosition().x, getTransform()->getWorldPosition().y, m_charge));
+		m_charge = 0;
 	}
 
 	Actor::update(deltaTime);
