@@ -4,7 +4,8 @@
 #include "CircleCollider.h"
 #include "Engine.h"
 
-Enemy::Enemy(float x, float y, Actor* target, int health) : Actor(x, y, "Enemy")
+Enemy::Enemy(float x, float y, Actor* target, int health, float scale, float collisionRadius, const char* name) 
+	: Actor(x, y, name)
 {
 	m_target = target;
 	m_health = health;
@@ -13,21 +14,18 @@ Enemy::Enemy(float x, float y, Actor* target, int health) : Actor(x, y, "Enemy")
 	m_moveComponent = (MoveComponent*)addComponent(new MoveComponent());
 	m_moveComponent->setMaxSpeed(100);
 
-	getTransform()->setScale(MathLibrary::Vector2{ 50, 50 });
-}
+	getTransform()->setScale(MathLibrary::Vector2{ scale, scale });
 
-void Enemy::start()
-{
-	m_collider = new CircleCollider(30, this);
+	m_collider = new CircleCollider(collisionRadius, this);
 	setCollider((Collider*)m_collider);
-
-	Actor::start();
 }
 
 void Enemy::update(float deltaTime)
 {
+	// Gets the distance between the target and this actor.
 	MathLibrary::Vector2 moveDirection = ((m_target->getTransform()->getWorldPosition() - getTransform()->getWorldPosition()).getNormalized());
 
+	// Sets the actor on a movement path towards its target.
 	m_moveComponent->setVelocity(moveDirection * 70);
 	getTransform()->setForward(m_moveComponent->getVelocity());
 
@@ -44,10 +42,12 @@ void Enemy::onCollision(Actor* other)
 {
 	if (other->getName() == "Arrow")
 	{
+		// Destroy the projectile.
 		Engine::destroy(other);
 	
 		m_health--;
 
+		// If health is less than or equal to zero, destroy this actor.
 		if (m_health <= 0)
 			Engine::destroy(this);
 	}

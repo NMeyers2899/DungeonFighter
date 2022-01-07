@@ -29,5 +29,13 @@ void Geist::update(float deltaTime)
 
 void Geist::onCollision(Actor* other)
 {
+	if (other->getName() == "ReflectedShot")
+	{
+		Engine::destroy(other);
 
+		setHealth(getHealth() - 1);
+
+		if (getHealth() <= 0)
+			Engine::destroy(this);
+	}
 }

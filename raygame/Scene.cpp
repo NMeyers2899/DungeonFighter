@@ -56,6 +56,11 @@ bool Scene::removeActor(Actor* actor)
     return m_actors.removeActor(actor);
 }
 
+Actor* Scene::getActor(int index)
+{
+    return m_actors.getActor(index);
+}
+
 void Scene::start()
 {
     m_started = true;

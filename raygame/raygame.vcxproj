@@ -151,6 +151,7 @@
     <ClCompile Include="ActorArray.cpp" />
     <ClCompile Include="Enemy.cpp" />
     <ClCompile Include="Geist.cpp" />
+    <ClCompile Include="Mothership.cpp" />
     <ClCompile Include="Projectile.cpp" />
     <ClCompile Include="CircleCollider.cpp" />
     <ClCompile Include="Collider.cpp" />
@@ -171,6 +172,7 @@
     <ClInclude Include="ActorArray.h" />
     <ClInclude Include="Enemy.h" />
     <ClInclude Include="Geist.h" />
+    <ClInclude Include="Mothership.h" />
     <ClInclude Include="Projectile.h" />
     <ClInclude Include="CircleCollider.h" />
     <ClInclude Include="Collider.h" />
