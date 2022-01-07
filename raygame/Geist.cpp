@@ -29,12 +29,13 @@ void Geist::update(float deltaTime)
 
 void Geist::onCollision(Actor* other)
 {
-	if (other->getName() == "Reflect")
+	if (other->getName() == "ReflectedShot")
 	{
-		Projectile* proj = dynamic_cast<Projectile*>(other);
 		Engine::destroy(other);
 
-		Engine::destroy(this);
-			
+		setHealth(getHealth() - 1);
+
+		if (getHealth() <= 0)
+			Engine::destroy(this);
 	}
 }
