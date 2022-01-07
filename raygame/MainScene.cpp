@@ -17,7 +17,7 @@ void MainScene::start()
 	Enemy* enemy = new Enemy(400, 600, player, 10, 50, 30);
 	Geist* enemy1 = new Geist(700, 200, player, 3, 50, 30);
 	Enemy* enemy2 = new Enemy(-20, -20, player, 3, 50, 20);
-	Mothership* enemy3 = new Mothership(300, 400, player, 20, 100, 60);
+	Mothership* enemy3 = new Mothership(200, 750, player, 20, 100, 60);
 
 	Actor* wall = new Actor(400, 600, "Wall");
 	wall->getTransform()->setScale({ 50, 100 });
