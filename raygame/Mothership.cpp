@@ -5,6 +5,11 @@
 #include "MoveComponent.h"
 #include <ctime>
 
+Mothership::~Mothership()
+{
+	Enemy::~Enemy();
+}
+
 void Mothership::start()
 {
 	m_startingTime = 0;

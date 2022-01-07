@@ -24,7 +24,7 @@ Projectile::Projectile(const char* owner, MathLibrary::Vector2 velocity, const c
 
 Projectile::~Projectile()
 {
-	
+	Actor::~Actor();
 }
 
 void Projectile::start()

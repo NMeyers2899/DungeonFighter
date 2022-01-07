@@ -21,6 +21,11 @@ Enemy::Enemy(float x, float y, Actor* target, int health, float scale, float col
 	setCollider((Collider*)m_collider);
 }
 
+Enemy::~Enemy()
+{
+	Actor::~Actor();
+}
+
 void Enemy::update(float deltaTime)
 {
 	// Gets the distance between the target and this actor.

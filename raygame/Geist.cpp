@@ -4,6 +4,11 @@
 #include "Projectile.h"
 #include <ctime>
 
+Geist::~Geist()
+{
+	Enemy::~Enemy();
+}
+
 void Geist::start()
 {
 	m_startTime = 0;
