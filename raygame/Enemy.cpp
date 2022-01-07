@@ -3,6 +3,7 @@
 #include "MoveComponent.h"
 #include "CircleCollider.h"
 #include "Engine.h"
+#include "Projectile.h"
 
 Enemy::Enemy(float x, float y, Actor* target, int health) : Actor(x, y, "Enemy")
 {
@@ -44,15 +45,22 @@ void Enemy::onCollision(Actor* other)
 {
 	if (other->getName() == "Arrow")
 	{
+		Projectile* proj = dynamic_cast<Projectile*>(other);
 		Engine::destroy(other);
-	
-		m_health--;
+		if(proj->getCharge() <= 250)
+			m_health--;
+		if (proj->getCharge() <= 500)
+			m_health -= 2;
+		if (proj->getCharge() == 1000)
+			m_health -= 3;
 
 		if (m_health <= 0)
 			Engine::destroy(this);
 	}
 
 	if (other->getName() == "Wall")
+		getTransform()->setWorldPosition(getTransform()->getWorldPosition() - m_moveComponent->getVelocity().getNormalized());
+	if (other->getName() == "Shield")
 		getTransform()->setWorldPosition(getTransform()->getWorldPosition() - m_moveComponent->getVelocity().getNormalized());
 }
 

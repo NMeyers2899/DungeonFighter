@@ -18,7 +18,7 @@ void Geist::update(float deltaTime)
 	if (m_timeBetweenShots - m_startTime > 4000)
 	{
 		Scene* currentScene = Engine::getCurrentScene();
-		currentScene->addActor(new Projectile(this, getTransform()->getForward(), "EnemyShot",
+		currentScene->addActor(new Projectile(this->getName(), getTransform()->getForward(), "EnemyShot",
 			getTransform()->getWorldPosition().x, getTransform()->getWorldPosition().y, 0));
 
 		m_startTime = m_timeBetweenShots;
@@ -29,5 +29,12 @@ void Geist::update(float deltaTime)
 
 void Geist::onCollision(Actor* other)
 {
+	if (other->getName() == "Reflect")
+	{
+		Projectile* proj = dynamic_cast<Projectile*>(other);
+		Engine::destroy(other);
 
+		Engine::destroy(this);
+			
+	}
 }

@@ -8,6 +8,7 @@
 #include "Engine.h"
 #include "Scene.h"
 #include "Projectile.h"
+#include "Shield.h"
 #include "Collider.h"
 
 void Player::start()
@@ -46,10 +47,19 @@ void Player::update(float deltaTime)
 	if (m_inputComponent->getActionDown() == false && m_charge != 0)
 	{
 		Scene* currentScene = Engine::getCurrentScene();
-		currentScene->addActor(new Projectile(this, getTransform()->getForward(), "Arrow", 
+		currentScene->addActor(new Projectile(this->getName(), getTransform()->getForward(), "Arrow", 
 			getTransform()->getWorldPosition().x, getTransform()->getWorldPosition().y, m_charge));
 		m_charge = 0;
 	}
+	if (m_inputComponent->getAction2Pressed() && m_cooldown == 0) 
+	{
+		m_cooldown = 20000;
+		Scene* currentScene = Engine::getCurrentScene();
+		currentScene->addActor(new Shield(this, "Shield",
+			getTransform()->getWorldPosition().x, getTransform()->getWorldPosition().y));
+	}
+	if (m_cooldown >= 1)
+		m_cooldown--;
 
 	Actor::update(deltaTime);
 }

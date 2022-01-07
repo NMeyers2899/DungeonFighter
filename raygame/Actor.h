@@ -38,6 +38,7 @@ public:
     /// </summary>
     const char* getName() { return m_name; }
 
+    void setName(const char* name) { m_name = name; }
     /// <summary>
     /// Called during the first update after an actor is added to a scene.
     /// </summary>

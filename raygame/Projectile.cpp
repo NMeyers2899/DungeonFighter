@@ -4,7 +4,7 @@
 #include "Engine.h"
 #include "CircleCollider.h"
 
-Projectile::Projectile(Actor* owner, MathLibrary::Vector2 velocity, const char* name, float x, float y, int charge) : 
+Projectile::Projectile(const char* owner, MathLibrary::Vector2 velocity, const char* name, float x, float y, int charge) : 
 	Actor(x, y, name)
 {
 	m_owner = owner;

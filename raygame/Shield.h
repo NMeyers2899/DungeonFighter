@@ -7,27 +7,25 @@ class SpriteComponent;
 class MoveComponent;
 class CircleCollider;
 
-class Projectile : public Actor
+class Shield : public Actor
 {
 public:
-	Projectile();
-	Projectile(const char* owner, MathLibrary::Vector2 velocity, const char* name, float x, float y, int charge);
-	~Projectile();
+	Shield();
+	Shield(Actor* owner, const char* name, float x, float y);
+	~Shield();
 
 	void start() override;
 	void update(float deltaTime) override;
 	void draw() override;
-	float getCharge() { return m_charge; }
+
 	void onCollision(Actor* other) override;
 
 private:
-	const char* m_owner;
-	MathLibrary::Vector2 m_velocity;
+	Actor* m_owner;
 	MoveComponent* m_moveComponent;
 	SpriteComponent* m_spriteComponent;
 	MathLibrary::Vector2 m_startingPosition;
 	MathLibrary::Vector2 m_currentPosition;
 	CircleCollider* m_collider;
-	float m_size = 0;
-	float m_charge = 0;
+	int timer = 0;
 };

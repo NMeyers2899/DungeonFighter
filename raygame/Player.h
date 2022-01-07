@@ -16,12 +16,12 @@ public:
 	void update(float deltaTime) override;
 	void draw() override;
 
-	int m_charge = 0;
-
 	void onCollision(Actor* other) override;
 	
 private:
 	InputComponent* m_inputComponent;
 	MoveComponent* m_moveComponent;
 	SpriteComponent* m_spriteComponent;
+	int m_charge = 0;
+	int m_cooldown = 0;
 };
