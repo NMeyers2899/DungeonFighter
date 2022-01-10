@@ -19,11 +19,6 @@ void Player::start()
 	m_moveComponent = dynamic_cast<MoveComponent*>(addComponent(new MoveComponent()));
 	m_moveComponent->setMaxSpeed(150);
 	m_spriteComponent = dynamic_cast<SpriteComponent*>(addComponent(new SpriteComponent("Images/player.png")));
-
-
-	// Set spawn point.
-	// Set move speed.
-	// Set position clamps.
 }
 
 void Player::update(float deltaTime)
@@ -37,6 +32,12 @@ void Player::update(float deltaTime)
 		getTransform()->setForward(m_moveComponent->getVelocity());
 	if (lookDirection.getMagnitude() > 0)
 		getTransform()->setForward(lookDirection.getNormalized());
+
+	if(getTransform()->getWorldPosition().x <= 0 || 
+		getTransform()->getWorldPosition().x >= 700 || 
+		getTransform()->getWorldPosition().y <= 0 || 
+		getTransform()->getWorldPosition().y >= 800)
+		getTransform()->setWorldPosition(getTransform()->getWorldPosition() - m_moveComponent->getVelocity().getNormalized());
 
 	if (m_inputComponent->getActionDown()) 
 	{
