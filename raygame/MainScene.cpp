@@ -44,4 +44,6 @@ void MainScene::start()
 	addActor(mothership1);
 	addActor(wall);
 	addActor(wall2);
+
+	Scene::Scene();
 }

@@ -31,11 +31,20 @@ bool InputComponent::getAction2Pressed()
 	return IsKeyPressed(KEY_Q);
 }
 
-
 /// <returns> Finds if the first action key is being held down. </returns>
 bool InputComponent::getActionDown()
 {
 	return IsKeyDown(KEY_F);
+}
+
+bool InputComponent::get1KeyPressed()
+{
+	return IsKeyPressed(KEY_ONE);
+}
+
+bool InputComponent::get2KeyPressed()
+{
+	return IsKeyPressed(KEY_TWO);
 }
 
 

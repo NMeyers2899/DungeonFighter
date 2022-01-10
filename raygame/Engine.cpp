@@ -5,6 +5,7 @@
 #include "SpriteComponent.h"
 #include "Player.h"
 #include "MainScene.h"
+#include "StartScene.h"
 
 bool Engine::m_applicationShouldClose = false;
 Scene** Engine::m_scenes = new Scene*;
@@ -31,7 +32,9 @@ void Engine::start()
 	SetTargetFPS(0);
 
 	//Start the scene
-	m_currentSceneIndex = addScene(new MainScene());
+	m_currentSceneIndex = addScene(new StartScene());
+
+	addScene(new MainScene);
 
 	m_scenes[m_currentSceneIndex]->start();
 }
@@ -197,6 +200,8 @@ void Engine::setCurrentScene(int index)
 
 	//Update the current scene index
 	m_currentSceneIndex = index;
+
+	m_scenes[m_currentSceneIndex]->start();
 }
 
 bool Engine::getKeyDown(int key)
