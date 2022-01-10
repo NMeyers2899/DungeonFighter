@@ -10,6 +10,8 @@
 
 void MainScene::start()
 {
+	m_isGameOver = false;
+
 	m_player = new Player(50, 50, "Player");
 	m_player->getTransform()->setScale({ 50, 50 });
 	CircleCollider* playerCol = new CircleCollider(20, m_player);
@@ -36,7 +38,7 @@ void MainScene::start()
 	// All starting actors.
 	addActor(m_player);
 	addActor(enemy1);
-	/*addActor(geist1);
+	addActor(geist1);
 	addActor(geist2);
 	addActor(enemy2);
 	addActor(enemy3);
@@ -44,7 +46,7 @@ void MainScene::start()
 	addActor(enemy5);
 	addActor(mothership1);
 	addActor(wall);
-	addActor(wall2);*/
+	addActor(wall2);
 
 	Scene::start();
 }
