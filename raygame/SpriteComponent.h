@@ -22,6 +22,8 @@ public:
 
 	void draw() override;
 
+	void setTexture(const char* path) { m_texture = new Texture2D(RAYLIB_H::LoadTexture(path)); }
+
 private:
 	Texture2D* m_texture;
 	int m_width;

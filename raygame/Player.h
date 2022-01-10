@@ -24,4 +24,6 @@ private:
 	SpriteComponent* m_spriteComponent;
 	int m_charge = 0;
 	int m_cooldown = 0;
+	int m_health = 3;
+	int m_iframes = 0;
 };
