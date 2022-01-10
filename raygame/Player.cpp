@@ -33,6 +33,7 @@ void Player::update(float deltaTime)
 	if (lookDirection.getMagnitude() > 0)
 		getTransform()->setForward(lookDirection.getNormalized());
 
+	// Clamping the player's position.
 	if(getTransform()->getWorldPosition().x <= 0 || 
 		getTransform()->getWorldPosition().x >= 700 || 
 		getTransform()->getWorldPosition().y <= 0 || 
