@@ -165,7 +165,9 @@
     <ClCompile Include="Scene.cpp" />
     <ClCompile Include="Shield.cpp" />
     <ClCompile Include="SpriteComponent.cpp" />
+    <ClCompile Include="StartScene.cpp" />
     <ClCompile Include="Transform2D.cpp" />
+    <ClCompile Include="UIComponent.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="AABBCollider.h" />
@@ -186,7 +188,9 @@
     <ClInclude Include="Scene.h" />
     <ClInclude Include="Shield.h" />
     <ClInclude Include="SpriteComponent.h" />
+    <ClInclude Include="StartScene.h" />
     <ClInclude Include="Transform2D.h" />
+    <ClInclude Include="UIComponent.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
