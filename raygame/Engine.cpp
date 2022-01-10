@@ -181,7 +181,8 @@ void Engine::setCurrentScene(int index)
 	//Update the current scene index
 	m_currentSceneIndex = index;
 
-	m_scenes[m_currentSceneIndex]->start();
+	if(!m_scenes[m_currentSceneIndex]->getStarted())
+		m_scenes[m_currentSceneIndex]->start();
 }
 
 bool Engine::getKeyDown(int key)
