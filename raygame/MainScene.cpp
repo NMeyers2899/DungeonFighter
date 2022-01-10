@@ -7,16 +7,20 @@
 #include "AABBCollider.h"
 #include "Mothership.h"
 #include "Engine.h"
+#include "TextBox.h"
+#include "UIComponent.h"
 
 void MainScene::start()
 {
 	m_isGameOver = false;
 
-	m_player = new Player(50, 50, "Player");
+	// Initializing the player
+	m_player = new Player(350, 400, "Player");
 	m_player->getTransform()->setScale({ 50, 50 });
 	CircleCollider* playerCol = new CircleCollider(20, m_player);
 	m_player->setCollider(playerCol);
 
+	// Initializing enemies
 	Enemy* enemy1 = new Enemy(400, 600, m_player, 4, 50, 30);
 	Geist* geist1 = new Geist(700, 200, m_player, 1, 50, 25);
 	Enemy* enemy2 = new Enemy(-20, -20, m_player, 4, 50, 30);
@@ -26,6 +30,7 @@ void MainScene::start()
 	Enemy* enemy5 = new Enemy(860, 400, m_player, 4, 50, 30);
 	Geist* geist2 = new Geist(1000, -800, m_player, 1, 50, 25);
 
+	// Initializing Walls
 	Actor* wall = new Actor(400, 600, "Wall");
 	wall->getTransform()->setScale({ 50, 100 });
 	AABBCollider* wallCol = new AABBCollider(wall);

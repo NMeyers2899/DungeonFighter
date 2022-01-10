@@ -2,12 +2,13 @@
 #include "Actor.h"
 
 class InputComponent;
+class SpriteComponent;
 
 class TextBox : public Actor
 {
 public:
 	TextBox() {}
-	TextBox(float x, float y, const char* name) : Actor(x, y, name) {};
+	TextBox(float x, float y, const char* name, const char* path = "");
 	~TextBox() { Actor::~Actor(); }
 
 	void start() override;
@@ -15,5 +16,6 @@ public:
 
 private:
 	InputComponent* m_inputComponent;
+	SpriteComponent* m_spriteComponent;
 };
 

@@ -1,6 +1,12 @@
 #include "TextBox.h"
 #include "InputComponent.h"
 #include "Engine.h"
+#include "SpriteComponent.h"
+
+TextBox::TextBox(float x, float y, const char* name, const char* path) : Actor(x, y, name)
+{
+	m_spriteComponent = dynamic_cast<SpriteComponent*>(addComponent(new SpriteComponent(path)));
+}
 
 void TextBox::start()
 {

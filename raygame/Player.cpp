@@ -62,55 +62,19 @@ void Player::update(float deltaTime)
 	}
 	if (m_cooldown >= 1)
 		m_cooldown--;
-	if (m_iframes >= 1)
-		m_iframes--;
-	if (m_iframes == 20000)
-		m_spriteComponent->setTexture("Null");
-	if (m_iframes == 19000)
-		m_spriteComponent->setTexture("Images/player.png");
-	if (m_iframes == 18000)
-		m_spriteComponent->setTexture("Null");
-	if (m_iframes == 17000)
-		m_spriteComponent->setTexture("Images/player.png");
-	if (m_iframes == 16000)
-		m_spriteComponent->setTexture("Null");
-	if (m_iframes == 15000)
-		m_spriteComponent->setTexture("Images/player.png");
-	if (m_iframes == 14000)
-		m_spriteComponent->setTexture("Null");
-	if (m_iframes == 13000)
-		m_spriteComponent->setTexture("Images/player.png");
-	if (m_iframes == 12000)
-		m_spriteComponent->setTexture("Null");
-	if (m_iframes == 11000)
-		m_spriteComponent->setTexture("Images/player.png");
-	if (m_iframes == 10000)
-		m_spriteComponent->setTexture("Null");
-	if (m_iframes == 9000)
-		m_spriteComponent->setTexture("Images/player.png");
-	if (m_iframes == 8000)
-		m_spriteComponent->setTexture("Null");
-	if (m_iframes == 7000)
-		m_spriteComponent->setTexture("Images/player.png");
-	if (m_iframes == 6000)
-		m_spriteComponent->setTexture("Null");
-	if (m_iframes == 5000)
-		m_spriteComponent->setTexture("Images/player.png");
-	if (m_iframes == 4000)
-		m_spriteComponent->setTexture("Null");
-	if (m_iframes == 3000)
-		m_spriteComponent->setTexture("Images/player.png");
-	if (m_iframes == 2000)
-		m_spriteComponent->setTexture("Null");
-	if (m_iframes == 1000)
-		m_spriteComponent->setTexture("Images/player.png");
 
 	Actor::update(deltaTime);
 }
 
-void Player::draw() 
+void Player::draw()
 {
-	Actor::draw();
+	if (m_iframes >= 1)
+		m_iframes--;
+
+	if (m_iframes == 19000 || m_iframes == 17000 || m_iframes == 15000 || m_iframes == 13000 || m_iframes == 11000
+		|| m_iframes == 9000 || m_iframes == 7000 || m_iframes == 5000 || m_iframes == 3000 || m_iframes == 1000
+		|| m_iframes == 0)
+		Actor::draw();
 	getCollider()->draw();
 }
 
@@ -121,23 +85,14 @@ void Player::onCollision(Actor* other)
 
 	if (other->getName() == "Enemy")
 	{
-		if (m_iframes == 0) 
-		{
-			m_iframes = 20000;
-			m_health--;
-		}
-			
+		m_health--;
 		return;
 	}
 
 	if (other->getName() == "EnemyShot")
 	{
 		Engine::destroy(other);
-		if (m_iframes == 0)
-		{
-			m_iframes = 20000;
-			m_health--;
-		}
+		m_health--;
 		return;
 	}
 }
