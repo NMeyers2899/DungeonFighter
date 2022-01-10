@@ -7,7 +7,8 @@ class TextBox;
 class StartScene : public Scene
 {
 public:
+	StartScene();
+
 	void start() override;
-	void end() override;
 };
 
