@@ -6,7 +6,7 @@ class UIComponent : public Component
 {
 public:
 	UIComponent() {};
-	UIComponent(float width, float height, int fontSize, const char* text = "", Font font = RAYLIB_H::GetFontDefault());
+	UIComponent(float width, float height, int fontSize, const char* text, Font font = RAYLIB_H::GetFontDefault());
 	~UIComponent() {};
 
 	void draw() override;

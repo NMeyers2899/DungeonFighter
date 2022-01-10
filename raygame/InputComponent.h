@@ -18,6 +18,9 @@ public:
 
 	bool getActionDown();
 
+	bool get1KeyPressed();
+	bool get2KeyPressed();
+
 
 private:
 	// Key for the player putting up their shield.

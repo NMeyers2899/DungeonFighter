@@ -7,6 +7,7 @@ UIComponent::UIComponent(float width, float height, int fontSize, const char* te
 	m_width = width;
 	m_height = height;
 	m_fontSize = fontSize;
+	m_font = RAYLIB_H::GetFontDefault();
 	m_text = text;
 
 	Component::Component();

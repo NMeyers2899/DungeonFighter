@@ -7,9 +7,5 @@ class StartScene : public Scene
 {
 public:
 	void start() override;
-	void update(float deltaTime) override;
-
-private:
-	InputComponent* m_inputComponent;
 };
 
