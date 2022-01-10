@@ -126,9 +126,7 @@ void Player::onCollision(Actor* other)
 			m_iframes = 20000;
 			m_health--;
 		}
-
-		if (m_health <= 0)
-			getTransform()->setWorldPosition({ 20, 20 });
+			
 		return;
 	}
 
@@ -140,8 +138,6 @@ void Player::onCollision(Actor* other)
 			m_iframes = 20000;
 			m_health--;
 		}
-		if(m_health <= 0)
-			getTransform()->setWorldPosition({ 20, 20 });
 		return;
 	}
 }

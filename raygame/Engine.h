@@ -96,10 +96,6 @@ public:
     void run();
 
 private:
-    // Don't Touch
-    static void addActorToDeletionList(Actor* actor);
-    void destroyActorsInList();
-
     void start();
     void update(float delaTime);
     void draw();
@@ -110,7 +106,6 @@ private:
     static bool m_applicationShouldClose;
     static Scene** m_scenes;
     static int m_sceneCount;
-    static ActorArray m_actorsToDelete;
     static int m_currentSceneIndex;
     static const int m_screenWidth = 700;
     static const int m_screenHeight = 800;
