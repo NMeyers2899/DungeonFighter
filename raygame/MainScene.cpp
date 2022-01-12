@@ -45,10 +45,12 @@ void MainScene::start()
 	wall->getTransform()->setScale({ 50, 100 });
 	AABBCollider* wallCol = new AABBCollider(wall);
 	wall->setCollider(wallCol);
+	wall->addComponent(new SpriteComponent("Images/Rock.png"));
 	Actor* wall2 = new Actor(200, 400, "Wall");
 	wall2->getTransform()->setScale({ 50, 100 });
 	AABBCollider* wall2Col = new AABBCollider(wall2);
 	wall2->setCollider(wall2Col);
+	wall2->addComponent(new SpriteComponent("Images/Rock.png"));
 
 	// All starting actors.
 	addActor(m_player);
