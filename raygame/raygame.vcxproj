@@ -152,7 +152,6 @@
     <ClCompile Include="Drone.cpp" />
     <ClCompile Include="Enemy.cpp" />
     <ClCompile Include="Geist.cpp" />
-    <ClCompile Include="Guardian.cpp" />
     <ClCompile Include="Mothership.cpp" />
     <ClCompile Include="Projectile.cpp" />
     <ClCompile Include="CircleCollider.cpp" />
@@ -179,7 +178,6 @@
     <ClInclude Include="Drone.h" />
     <ClInclude Include="Enemy.h" />
     <ClInclude Include="Geist.h" />
-    <ClInclude Include="Guardian.h" />
     <ClInclude Include="Mothership.h" />
     <ClInclude Include="Projectile.h" />
     <ClInclude Include="CircleCollider.h" />

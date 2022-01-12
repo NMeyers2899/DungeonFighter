@@ -15,7 +15,7 @@ public:
     Transform2D(Actor* owner);
     ~Transform2D();
 
-   /// <returns>The current orientation of this actors z axis.</returns>
+    /// <returns>The current orientation of this actors z axis.</returns>
     MathLibrary::Vector2 getForward();
 
     /// <summary>
@@ -23,7 +23,6 @@ public:
     /// </summary>
     /// <param name="value">The value to set the forward to</param>
     void setForward(MathLibrary::Vector2 value);
-
 
     /// <returns>A vector representing the position of the object in the world.</returns>
     MathLibrary::Vector2 getWorldPosition();
@@ -46,6 +45,9 @@ public:
 
     /// <returns>A pointer to the transform that has been set as this transforms parent.</returns>
     Transform2D* getParent() { return m_parent; }
+
+    /// <returns>Sets the parent of this transform.</return
+    void setParent(Transform2D* parent);
 
     /// <summary>
     /// Sets this transform as the given transforms parent so that their matrices are concatenated for following updates.
@@ -123,7 +125,7 @@ public:
 
 private:
     /// <summary>
-    /// Updates the global transform to be the combination of the parent and local
+    /// Updates the global transform to be the combination of the paernt and local
     /// transforms. Updates the transforms for all children of this transform
     /// </summary>
     void updateTransforms();

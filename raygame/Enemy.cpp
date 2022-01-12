@@ -15,7 +15,7 @@ Enemy::Enemy(float x, float y, Actor* target, int health, float scale, float col
 		m_spriteComponent = (SpriteComponent*)addComponent(new SpriteComponent("Images/Enemy.png"));
 	if (m_name == "Geist")
 		m_spriteComponent = (SpriteComponent*)addComponent(new SpriteComponent("Images/Geist.png"));
-	if (m_name == "Mother")
+	if (m_name == "Mothership")
 		m_spriteComponent = (SpriteComponent*)addComponent(new SpriteComponent("Images/Mothership.png"));
 	if (m_name == "Guardian")
 		m_spriteComponent = (SpriteComponent*)addComponent(new SpriteComponent("Images/Guardian.png"));

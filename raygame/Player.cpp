@@ -84,7 +84,9 @@ void Player::onCollision(Actor* other)
 	if (other->getName() == "Wall")
 		getTransform()->setWorldPosition(getTransform()->getWorldPosition() - m_moveComponent->getVelocity().getNormalized());
 
-	if (other->getName() == "Enemy")
+	if (other->getName() == "Basic" || other->getName() == "Geist" 
+		|| other->getName() == "Guardian" || other->getName() == "Drone" 
+		|| other->getName() == "Mothership")
 	{
 		m_health--;
 		return;
