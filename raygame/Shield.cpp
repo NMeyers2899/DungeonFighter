@@ -36,10 +36,10 @@ void Shield::update(float deltaTime)
 	m_currentPosition = m_owner->getTransform()->getWorldPosition();
 	getTransform()->setWorldPosition(m_owner->getTransform()->getWorldPosition());
 
-	timer++;
-	if (timer >= 10000)
+	m_timer++;
+	if (m_timer >= 10000)
 	{
-		timer = 0;
+		m_timer = 0;
 		Engine::destroy(this);
 		return;
 	}
