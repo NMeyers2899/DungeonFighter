@@ -28,7 +28,7 @@ void Mothership::update(float deltaTime)
 	{
 		Scene* currentScene = Engine::getCurrentScene();
 		currentScene->addActor(new Enemy(getTransform()->getWorldPosition().x, getTransform()->getWorldPosition().y,
-			Engine::getCurrentScene()->getActor(0), 2, 25, 18));
+			Engine::getCurrentScene()->getActor(0), 2, 25, 18, "Basic"));
 
 		m_startingTime = m_timeBetweenSpawns;
 	}
