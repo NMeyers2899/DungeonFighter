@@ -11,7 +11,12 @@ Enemy::Enemy(float x, float y, Actor* target, int health, float scale, float col
 	m_target = target;
 	m_health = health;
 
-	m_spriteComponent = (SpriteComponent*)addComponent(new SpriteComponent("Images/Enemy.png"));
+	if(m_name == "Basic")
+		m_spriteComponent = (SpriteComponent*)addComponent(new SpriteComponent("Images/Enemy.png"));
+	if (m_name == "Geist")
+		m_spriteComponent = (SpriteComponent*)addComponent(new SpriteComponent("Images/Enemy.png"));
+	if (m_name == "Mother")
+		m_spriteComponent = (SpriteComponent*)addComponent(new SpriteComponent("Images/Enemy.png"));
 	m_moveComponent = (MoveComponent*)addComponent(new MoveComponent());
 	m_moveComponent->setMaxSpeed(100);
 

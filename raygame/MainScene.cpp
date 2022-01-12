@@ -21,14 +21,14 @@ void MainScene::start()
 	m_player->setCollider(playerCol);
 
 	// Initializing enemies
-	Enemy* enemy1 = new Enemy(400, 600, m_player, 4, 50, 30);
-	Geist* geist1 = new Geist(700, 200, m_player, 1, 50, 25);
-	Enemy* enemy2 = new Enemy(-20, -20, m_player, 4, 50, 30);
-	Mothership* mothership1 = new Mothership(200, 750, m_player, 20, 100, 60);
-	Enemy* enemy3 = new Enemy(-200, 700, m_player, 4, 50, 30);
-	Enemy* enemy4 = new Enemy(-100, -200, m_player, 4, 50, 30);
-	Enemy* enemy5 = new Enemy(860, 400, m_player, 4, 50, 30);
-	Geist* geist2 = new Geist(1000, -800, m_player, 1, 50, 25);
+	Enemy* enemy1 = new Enemy(400, 600, m_player, 4, 50, 30, "Basic");
+	Geist* geist1 = new Geist(700, 200, m_player, 1, 50, 25, "Geist");
+	Enemy* enemy2 = new Enemy(-20, -20, m_player, 4, 50, 30, "Basic");
+	Mothership* mothership1 = new Mothership(200, 750, m_player, 20, 100, 60, "Mother");
+	Enemy* enemy3 = new Enemy(-200, 700, m_player, 4, 50, 30, "Basic");
+	Enemy* enemy4 = new Enemy(-100, -200, m_player, 4, 50, 30, "Basic");
+	Enemy* enemy5 = new Enemy(860, 400, m_player, 4, 50, 30, "Basic");
+	Geist* geist2 = new Geist(1000, -800, m_player, 1, 50, 25, "Geist");
 
 	// Initializing Walls
 	Actor* wall = new Actor(400, 600, "Wall");
