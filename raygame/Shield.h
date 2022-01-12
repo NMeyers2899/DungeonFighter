@@ -27,5 +27,5 @@ private:
 	MathLibrary::Vector2 m_startingPosition;
 	MathLibrary::Vector2 m_currentPosition;
 	CircleCollider* m_collider;
-	int timer = 0;
+	int m_timer = 0;
 };
