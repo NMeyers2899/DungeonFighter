@@ -13,5 +13,6 @@ public:
 private:
 	Player* m_player;
 	bool m_isGameOver = false;
+	Actor* m_rotatingActor;
 };
 

@@ -209,9 +209,8 @@ void Actor::onDestroy()
     for (int i = 0; i < m_componentCount; i++)
         m_components[i]->onDestroy();
 
-    //Removes this actor from its parent if it has one.
-    if (getTransform()->getParent())
-        getTransform()->getParent()->removeChild(getTransform());
+    for (int i = 0; i < getTransform()->getChildCount(); i++)
+        getTransform()->removeChild(getTransform()->getChildren()[i]);
 }
 
 bool Actor::checkForCollision(Actor* other)

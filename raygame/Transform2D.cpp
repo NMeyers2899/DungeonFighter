@@ -27,10 +27,7 @@ MathLibrary::Vector2 Transform2D::getForward()
 {
     //Update the transforms if they've been changed
     if (m_shouldUpdateTransforms)
-    {
         updateTransforms();
-        m_shouldUpdateTransforms = false;
-    }
 
     //Return the direction of the b x axis
     return MathLibrary::Vector2(m_globalMatrix->m00, m_globalMatrix->m10).getNormalized();
@@ -49,16 +46,13 @@ MathLibrary::Vector2 Transform2D::getWorldPosition()
 {
     //Update the transforms if they've been changed
     if (m_shouldUpdateTransforms)
-    {
         updateTransforms();
-        m_shouldUpdateTransforms = false;
-    }
 
     //Return the translation column from the global matrix
     return MathLibrary::Vector2(m_globalMatrix->m02, m_globalMatrix->m12);
 }
 
-void Transform2D::setWorldPosition(MathLibrary::Vector2 value)
+void Transform2D::setWorldPostion(MathLibrary::Vector2 value)
 {
     //If the transform has a parent...
     if (m_parent)
@@ -80,10 +74,7 @@ MathLibrary::Vector2 Transform2D::getLocalPosition()
 {
     //Update the transforms if they've been changed
     if (m_shouldUpdateTransforms)
-    {
         updateTransforms();
-        m_shouldUpdateTransforms = false;
-    }
 
     //Return the translation column from the local matrix
     return MathLibrary::Vector2(m_localMatrix->m02, m_localMatrix->m12);
@@ -250,10 +241,7 @@ MathLibrary::Matrix3* Transform2D::getGlobalMatrix()
 {
     //Update the transforms if they've changed
     if (m_shouldUpdateTransforms)
-    {
         updateTransforms();
-        m_shouldUpdateTransforms = false;
-    }
 
     return m_globalMatrix;
 }
@@ -262,25 +250,28 @@ MathLibrary::Matrix3* Transform2D::getLocalMatrix()
 {
     //Update the transforms if they've changed
     if (m_shouldUpdateTransforms)
-    {
         updateTransforms();
-        m_shouldUpdateTransforms = false;
-    }
 
     return m_localMatrix;
 }
 
 void Transform2D::updateTransforms()
 {
+    m_shouldUpdateTransforms = false;
+
     //Combine the translation, rotation, and scale matrices to form the local matrix
     *m_localMatrix = *m_translation * *m_rotation * *m_scale;
 
     //If the transform has a parent...
     if (m_parent)
         //...set the global matrix to be the parent global combined with the local
-        *m_globalMatrix = *(m_parent->m_globalMatrix) * (*m_localMatrix);
+        *m_globalMatrix = *(m_parent->getGlobalMatrix()) * (*m_localMatrix);
     //Otherwise...
     else
         //...set the global to be the local
         *m_globalMatrix = *m_localMatrix;
+
+    //Tell all children to update transforms
+    for (int i = 0; i < m_childCount; i++)
+        m_children[i]->updateTransforms();
 }

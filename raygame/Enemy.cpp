@@ -17,6 +17,10 @@ Enemy::Enemy(float x, float y, Actor* target, int health, float scale, float col
 		m_spriteComponent = (SpriteComponent*)addComponent(new SpriteComponent("Images/Geist.png"));
 	if (m_name == "Mother")
 		m_spriteComponent = (SpriteComponent*)addComponent(new SpriteComponent("Images/Mothership.png"));
+	if (m_name == "Guardian")
+		m_spriteComponent = (SpriteComponent*)addComponent(new SpriteComponent("Images/Guardian.png"));
+	if (m_name == "Drone")
+		m_spriteComponent = (SpriteComponent*)addComponent(new SpriteComponent("Images/Drone.png"));
 	m_moveComponent = (MoveComponent*)addComponent(new MoveComponent());
 	m_moveComponent->setMaxSpeed(100);
 

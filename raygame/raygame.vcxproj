@@ -149,8 +149,10 @@
     <ClCompile Include="AABBCollider.cpp" />
     <ClCompile Include="Actor.cpp" />
     <ClCompile Include="ActorArray.cpp" />
+    <ClCompile Include="Drone.cpp" />
     <ClCompile Include="Enemy.cpp" />
     <ClCompile Include="Geist.cpp" />
+    <ClCompile Include="Guardian.cpp" />
     <ClCompile Include="Mothership.cpp" />
     <ClCompile Include="Projectile.cpp" />
     <ClCompile Include="CircleCollider.cpp" />
@@ -174,8 +176,10 @@
     <ClInclude Include="AABBCollider.h" />
     <ClInclude Include="Actor.h" />
     <ClInclude Include="ActorArray.h" />
+    <ClInclude Include="Drone.h" />
     <ClInclude Include="Enemy.h" />
     <ClInclude Include="Geist.h" />
+    <ClInclude Include="Guardian.h" />
     <ClInclude Include="Mothership.h" />
     <ClInclude Include="Projectile.h" />
     <ClInclude Include="CircleCollider.h" />
