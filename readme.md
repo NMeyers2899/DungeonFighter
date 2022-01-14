@@ -10,7 +10,7 @@ WASD - Move your character.
 
 Arrow Keys - Rotates your character to have them look in a specific direction (independent of where you are moving).
 
-F - Fires a projectile (press and hold to achieve a charge shot which does more damage, hits in a wider area, and shoots farther).
+SPACE - Fires a projectile (press and hold to achieve a charge shot which does more damage, hits in a wider area, and shoots farther).
 
 Q - Pulls up a shield for a short period of time.
 
@@ -29,3 +29,7 @@ Geist - Unaffected by your projectiles and walls. Will fire its own projectile a
 Mothership -  Moves back and forth along the bottom of the battlefield. It will spawn smaller versions of the basic enemy over time.
 
 Guardian - With the help of its drones, it is heavily protected from your projectiles. Strike down the drones to strike down the guardian!
+## Known Bugs
+Moving a certain way in the corners of the map allows you to go out of bounds. It is possible to get back inside the bounds, but it is very hard.
+
+You cannot shoot while looking up and to the left.
