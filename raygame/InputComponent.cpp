@@ -22,7 +22,7 @@ MathLibrary::Vector2 InputComponent::getLookAxis()
 /// <returns> Finds if the first action key has been pressed. </returns>
 bool InputComponent::getActionPressed()
 {
-	return RAYLIB_H::IsKeyPressed(KEY_F);
+	return RAYLIB_H::IsKeyPressed(KEY_SPACE);
 }
 
 /// <returns> Finds if the second action key has been pressed. </returns>
@@ -34,7 +34,7 @@ bool InputComponent::getAction2Pressed()
 /// <returns> Finds if the first action key is being held down. </returns>
 bool InputComponent::getActionDown()
 {
-	return IsKeyDown(KEY_F);
+	return IsKeyDown(KEY_SPACE);
 }
 
 bool InputComponent::get1KeyPressed()
