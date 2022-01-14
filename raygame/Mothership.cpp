@@ -24,6 +24,7 @@ void Mothership::update(float deltaTime)
 {
 	m_timeBetweenSpawns = clock();
 
+	// Checks to see how long it should take to spawn another basic enemy.
 	if (m_timeBetweenSpawns - m_startingTime > 7000)
 	{
 		Scene* currentScene = Engine::getCurrentScene();

@@ -15,8 +15,10 @@ UIComponent::UIComponent(float width, float height, int fontSize, const char* te
 
 void UIComponent::draw()
 {
-		Rectangle textBox = Rectangle({ getOwner()->getTransform()->getWorldPosition().x,
+	// Creates a box which the text will fit in.
+	Rectangle textBox = Rectangle({ getOwner()->getTransform()->getWorldPosition().x,
 			getOwner()->getTransform()->getWorldPosition().y, m_width, m_height });
 
-		RAYLIB_H::DrawTextRec(m_font, m_text, textBox, m_fontSize, 1, true, RAYWHITE);
+	// Creates the textbox.
+	RAYLIB_H::DrawTextRec(m_font, m_text, textBox, m_fontSize, 1, true, RAYWHITE);
 }

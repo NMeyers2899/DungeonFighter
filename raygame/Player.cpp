@@ -68,13 +68,6 @@ void Player::update(float deltaTime)
 
 void Player::draw()
 {
-	/*if (m_iframes >= 1)
-		m_iframes--;
-
-	if (m_iframes == 19000 || m_iframes == 17000 || m_iframes == 15000 || m_iframes == 13000 || m_iframes == 11000
-		|| m_iframes == 9000 || m_iframes == 7000 || m_iframes == 5000 || m_iframes == 3000 || m_iframes == 1000
-		|| m_iframes == 0)
-		Actor::draw();*/
 	Actor::draw();
 	getCollider()->draw();
 }

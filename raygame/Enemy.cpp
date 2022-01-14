@@ -11,6 +11,7 @@ Enemy::Enemy(float x, float y, Actor* target, int health, float scale, float col
 	m_target = target;
 	m_health = health;
 
+	// Finds the enemy name and changes the sprite based on that.
 	if(m_name == "Basic")
 		m_spriteComponent = (SpriteComponent*)addComponent(new SpriteComponent("Images/Enemy.png"));
 	if (m_name == "Geist")

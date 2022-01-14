@@ -30,7 +30,7 @@ Projectile::~Projectile()
 void Projectile::start()
 {
 	m_moveComponent->setVelocity(m_velocity * 700);
-
+	// Changes the size and range of the projectile the more it is charged up.
 	m_size = 8 + (m_charge / 50);
 	m_collider = new CircleCollider(m_size, this);
 	setCollider((Collider*)m_collider);
@@ -45,6 +45,7 @@ void Projectile::update(float deltaTime)
 	MathLibrary::Vector2 displacement = m_currentPosition - m_startingPosition;
 	float distance = displacement.getMagnitude();
 
+	// If the projectile moves far enough from its origin point, it deletes itself.
 	float dist = 200 + (m_charge/5);
 	if (distance >= dist)
 	{

@@ -10,7 +10,6 @@ Shield::Shield(Actor* owner, const char* name, float x, float y) :
 {
 	m_owner = owner;
 
-	//m_spriteComponent = (SpriteComponent*)addComponent(new SpriteComponent("Images/bullet.png"));
 	m_moveComponent = (MoveComponent*)addComponent(new MoveComponent());
 	m_moveComponent->setMaxSpeed(700);
 
@@ -33,9 +32,11 @@ void Shield::start()
 
 void Shield::update(float deltaTime)
 {
+	// Sets itself to the owner's position.
 	m_currentPosition = m_owner->getTransform()->getWorldPosition();
 	getTransform()->setWorldPosition(m_owner->getTransform()->getWorldPosition());
 
+	// Once the timer runs out, it deletes itself.
 	m_timer++;
 	if (m_timer >= 10000)
 	{

@@ -20,6 +20,7 @@ void Geist::update(float deltaTime)
 {
 	m_timeBetweenShots = clock();
 
+	// Checks to see how long it should take to shoot.
 	if (m_timeBetweenShots - m_startTime > 4000)
 	{
 		Scene* currentScene = Engine::getCurrentScene();

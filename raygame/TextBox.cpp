@@ -15,6 +15,7 @@ void TextBox::start()
 
 void TextBox::update(float deltaTime)
 {
+	// Use the inputs to allow the player to start the game or quit the game.
 	if (m_inputComponent->get1KeyPressed())
 		Engine::setCurrentScene(1);
 
