@@ -16,9 +16,9 @@ UIComponent::UIComponent(float width, float height, int fontSize, const char* te
 void UIComponent::draw()
 {
 	// Creates a box which the text will fit in.
-	Rectangle textBox = Rectangle({ getOwner()->getTransform()->getWorldPosition().x,
+	m_textBox = Rectangle({ getOwner()->getTransform()->getWorldPosition().x,
 			getOwner()->getTransform()->getWorldPosition().y, m_width, m_height });
 
 	// Creates the textbox.
-	RAYLIB_H::DrawTextRec(m_font, m_text, textBox, m_fontSize, 1, true, RAYWHITE);
+	RAYLIB_H::DrawTextRec(m_font, m_text, m_textBox, m_fontSize, 1, true, RAYWHITE);
 }

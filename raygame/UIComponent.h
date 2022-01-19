@@ -17,5 +17,6 @@ private:
 	float m_height;
 	int m_fontSize;
 	Font m_font;
+	Rectangle m_textBox;
 };
 
