@@ -17,7 +17,10 @@ public:
 	void start() override;
 	void update(float deltaTime) override;
 	void draw() override;
+
+	// Finds the charge of the projectile in terms of the player.
 	float getCharge() { return m_charge; }
+
 	void onCollision(Actor* other) override;
 
 private:

@@ -19,9 +19,11 @@ public:
 	///</summary>
 	~MoveComponent() {}
 
+	// Find and sets the velocity.
 	MathLibrary::Vector2 getVelocity() { return m_velocity; }
 	void setVelocity(MathLibrary::Vector2 velocity) { m_velocity = velocity; }
 
+	// Finds and sets the max speed.
 	float getMaxSpeed() { return m_maxSpeed; }
 	void setMaxSpeed(float maxSpeed) { m_maxSpeed = maxSpeed; }
 

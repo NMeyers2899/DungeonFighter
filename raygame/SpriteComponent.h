@@ -14,14 +14,17 @@ public:
 
 	~SpriteComponent() override;
 
+	// Gets the width of the sprite and can set it.
 	int getWidth() { return m_width; }
 	void setWidth(int width) { m_width = width; }
 
+	// Gets the height of the sprite and can set it.
 	int getHeight() { return m_height; }
 	void setHeight(int height) { m_height = height; }
 
 	void draw() override;
 
+	// Sets the texture of the sprite.
 	void setTexture(const char* path) { m_texture = new Texture2D(RAYLIB_H::LoadTexture(path)); }
 
 private:

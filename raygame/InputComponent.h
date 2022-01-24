@@ -16,8 +16,10 @@ public:
 	bool getActionPressed();
 	bool getAction2Pressed();
 
+	// Finds whether or not the action key is being held down.
 	bool getActionDown();
 
+	// Finds whether or not the specific number keys were pressed.
 	bool get1KeyPressed();
 	bool get2KeyPressed();
 
